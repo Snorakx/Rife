@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/bootstrap";
+
+.nav-container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  justify-content: space-between;
+  border-top: 1px solid black;
+}
+.nav-icons {
+  width: 33%;
+  font-size: 300%;
+  color: black;
+}
+.App-header {
+  color: red;
+  background-color: green;
+  width: 100%;
+}
+.input-container {
+  position: absolute;
+  width: 100%;
+}
+.project-form {
+  margin-top: 5%;
+}
+.project-input {
+  width: 80%;
+  padding: 5%;
+  border: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-left: 2.5%;
+  background: #f0f0f0;
+}
+.project-input::placeholder {
+  font-size: 150%;
+}
+.project-submit {
+  padding: 5%;
+  width: 14%;
+  border: none;
+  color: white;
+  background: gray;
+  margin-left: -8%;
+  border-radius: 15px;
+  position: absolute;
+}
+.submit-icon {
+  font-size: 250%;
+}
+.logo {
+  font-size: 200%;
+}
+.social-icons {
+  font-size: xx-large;
+  margin-left: 15%;
+}
+.social-icons-container {
+  margin-left: -13%;
+  margin-top: 25%;
+}
