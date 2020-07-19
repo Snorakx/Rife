@@ -2,12 +2,9 @@ import React, { FC, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import firebase from "firebase";
 import { db } from "../constans/config";
-import Header from "../components/header";
 import { Link, useHistory } from "react-router-dom";
 import { AiFillGoogleCircle, AiFillFacebook } from "react-icons/ai";
 import { IconContext } from "react-icons";
-
-const navigate = () => {};
 
 const StartLoginScreen: FC = (props) => {
   const history = useHistory();
@@ -22,11 +19,19 @@ const StartLoginScreen: FC = (props) => {
         const credential = result.credential as firebase.auth.OAuthCredential;
         let token = credential.accessToken;
         let user = result.user;
+        let newUser = result.additionalUserInfo?.isNewUser;
 
         if (user) {
           history.push("/home");
+        } else if (newUser) {
+          history.push("/home");
+
+          db.ref("/user").push({
+            name: result.user?.displayName,
+            email: result.user?.email,
+          });
         } else {
-          console.log("NIE WCHODZISZ");
+          console.log("isLogged:no");
         }
       })
       .catch(function (error) {
@@ -38,6 +43,9 @@ const StartLoginScreen: FC = (props) => {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
+        if (error) {
+          alert(error.message);
+        }
       });
   };
 
@@ -54,11 +62,19 @@ const StartLoginScreen: FC = (props) => {
         var token = credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        let newUser = result.additionalUserInfo?.isNewUser;
 
         if (user) {
           history.push("/home");
+        } else if (newUser) {
+          history.push("/home");
+
+          db.ref("/user").push({
+            name: result.user?.displayName,
+            email: result.user?.email,
+          });
         } else {
-          console.log("NIE WCHODZISZ");
+          console.log("isLogged:no");
         }
 
         // ...
@@ -71,6 +87,10 @@ const StartLoginScreen: FC = (props) => {
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
+        if (error) {
+          alert(error.message);
+        }
+
         // ...
       });
   };

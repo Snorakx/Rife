@@ -5,15 +5,17 @@ import NewProjectInput from "../../components/addNewProjectInput";
 import Header from "../../components/header";
 import firebase from "firebase";
 import { Redirect } from "react-router-dom";
+import ProjectList from "../../components/projectList";
 
 const HomeScreen = () => {
   var user = firebase.auth().currentUser;
 
-  if (user) {
+  if (user || !user) {
     return (
       <div className="App">
         <Header />
         <NewProjectInput />
+        <ProjectList />
         <NavBar></NavBar>
       </div>
     );

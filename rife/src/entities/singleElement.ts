@@ -1,3 +1,3 @@
-export interface ISingleElement {
+export interface ISingleProject {
   name: string;
 }

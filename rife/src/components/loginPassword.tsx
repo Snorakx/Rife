@@ -55,6 +55,9 @@ const LoginPassword: FC = (props) => {
       </Button>
       <div>
         IF U DONT HAVE ACC GO TO <Link to="/register">Register</Link>
+        <p>
+          DONT REMEMBER PASSWORD? <Link to="/passwordReset">RESET HERE</Link>
+        </p>
       </div>
     </Form>
   );

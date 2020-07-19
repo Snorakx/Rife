@@ -11,6 +11,7 @@ import Firebase, { app } from "firebase";
 import "firebase/auth";
 import firebase from "firebase";
 import Login from "./screens/Login";
+import ForgotPassword from "./screens/forgotPassword";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path="/" component={LoginScreen} />
         <Route path="/register" component={RegisterScreen} />
         <Route path="/login" component={Login} />
+        <Route path="/passwordReset" component={ForgotPassword} />
 
         <Route path="/home" component={HomeScreen} />
         <Route path="/user" component={User} />
