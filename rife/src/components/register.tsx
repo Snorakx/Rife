@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import firebase from "firebase";
-import { db } from "../constans/config";
+// import { db } from "../constans/config";
 import { Link, useHistory } from "react-router-dom";
 
 const AuthForm: FC = (props) => {
@@ -27,11 +27,11 @@ const AuthForm: FC = (props) => {
             console.log("NIE WCHODZISZ");
           }
         });
-      db.ref("/user").push({
-        name: name,
-        email: email,
-        //   pass: password,
-      });
+      // db.ref("/user").push({
+      //   name: name,
+      //   email: email,
+      //   //   pass: password,
+      // });
     }
   };
 

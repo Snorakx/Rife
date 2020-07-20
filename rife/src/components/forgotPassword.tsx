@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import firebase from "firebase";
-import { db } from "../constans/config";
-import { Link, useHistory } from "react-router-dom";
+// import { db } from "../constans/config";
+import { useHistory } from "react-router-dom";
 
 const PasswordReset: FC = (props) => {
   const history = useHistory();

@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "../../components/navbar";
-import logo from "./logo.svg";
+// import NavBar from "../../components/navbar";
+// import logo from "./logo.svg";
 import firebase from "firebase";
 import { Redirect } from "react-router-dom";
 

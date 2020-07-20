@@ -1,6 +1,6 @@
-import Firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
 import "firebase/auth";
-require("dotenv").config();
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDva8ULIv7OdynRdXRTKG5vusTheJayMCo",
@@ -13,6 +13,7 @@ export const firebaseConfig = {
   measurementId: "G-DPHTFY1PNX",
 };
 
-let app = Firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ timestampsInSnapshots: true });
 
-export const db = app.database();
+export default firebase;

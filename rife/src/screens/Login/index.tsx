@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/header";
-import AuthForm from "../../components/register";
-import StartLoginScreen from "../../components/startLoginScreen";
+// import AuthForm from "../../components/register";
+// import StartLoginScreen from "../../components/startLoginScreen";
 import LoginPassword from "../../components/loginPassword";
 
 const Login = () => {

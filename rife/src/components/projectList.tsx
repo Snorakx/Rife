@@ -1,24 +1,25 @@
 import React, { FC } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
-import { IconContext } from "react-icons";
-import {
-  Button,
-  FormControl,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-  ListGroup,
-} from "react-bootstrap";
+// import { AiOutlinePlus } from "react-icons/ai";
+// import { IconContext } from "react-icons";
+import { ListGroup } from "react-bootstrap";
+import { ISingleProject } from "../entities/singleElement";
+interface IProjectProps {
+  projects?: any[];
+}
 
-const ProjectList: FC = (props) => {
+const ProjectList: FC<IProjectProps> = ({ projects }) => {
   return (
     <ListGroup>
-      <ListGroup.Item variant="primary" style={{ height: "200%" }}>
-        <div className="abc">ABC</div>
-        <br />
-        <div>abc</div>
-      </ListGroup.Item>
+      {projects &&
+        projects.map((project: ISingleProject) => {
+          return (
+            <ListGroup.Item key={project.id} variant="primary">
+              {project.name}
+              <br />
+              {project.id}
+            </ListGroup.Item>
+          );
+        })}
     </ListGroup>
   );
 };

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdAspectRatio } from "react-icons/md";
 import { IconContext } from "react-icons";
 

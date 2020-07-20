@@ -1,7 +1,6 @@
-import React, { FC, useState } from "react";
-import { Form, Button } from "react-bootstrap";
-import firebase from "firebase";
-import { db } from "../constans/config";
+import React, { FC } from "react";
+import { Button } from "react-bootstrap";
+import firebase from "../constans/config";
 import { Link, useHistory } from "react-router-dom";
 import { AiFillGoogleCircle, AiFillFacebook } from "react-icons/ai";
 import { IconContext } from "react-icons";
@@ -17,7 +16,7 @@ const StartLoginScreen: FC = (props) => {
       .signInWithPopup(provider)
       .then((result) => {
         const credential = result.credential as firebase.auth.OAuthCredential;
-        let token = credential.accessToken;
+        // let token = credential.accessToken;
         let user = result.user;
         let newUser = result.additionalUserInfo?.isNewUser;
 
@@ -25,23 +24,18 @@ const StartLoginScreen: FC = (props) => {
           history.push("/home");
         } else if (newUser) {
           history.push("/home");
-
-          db.ref("/user").push({
-            name: result.user?.displayName,
-            email: result.user?.email,
-          });
         } else {
           console.log("isLogged:no");
         }
       })
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
+        // // The email of the user's account used.
+        // var email = error.email;
+        // // The firebase.auth.AuthCredential type that was used.
+        // var credential = error.credential;
         // ...
         if (error) {
           alert(error.message);
@@ -59,7 +53,7 @@ const StartLoginScreen: FC = (props) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = result.credential as firebase.auth.OAuthCredential;
 
-        var token = credential.accessToken;
+        // var token = credential.accessToken;
         // The signed-in user info.
         var user = result.user;
         let newUser = result.additionalUserInfo?.isNewUser;
@@ -69,10 +63,10 @@ const StartLoginScreen: FC = (props) => {
         } else if (newUser) {
           history.push("/home");
 
-          db.ref("/user").push({
-            name: result.user?.displayName,
-            email: result.user?.email,
-          });
+          // db.ref("/user").push({
+          //   name: result.user?.displayName,
+          //   email: result.user?.email,
+          // });
         } else {
           console.log("isLogged:no");
         }
@@ -81,12 +75,12 @@ const StartLoginScreen: FC = (props) => {
       })
       .catch(function (error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
+        // // The email of the user's account used.
+        // var email = error.email;
+        // // The firebase.auth.AuthCredential type that was used.
+        // var credential = error.credential;
         if (error) {
           alert(error.message);
         }
