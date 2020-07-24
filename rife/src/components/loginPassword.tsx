@@ -25,41 +25,40 @@ const LoginPassword: FC = (props) => {
   };
 
   return (
-    <Form>
-      <Form.Group controlId="Email">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
+    <form>
+      <div className="input-container">
+        <label className="label">E-mail</label>
+        <input
+          name="name"
+          className="input"
           type="email"
-          placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group controlId="Password">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
+        <label className="label">Hasło</label>
+        <input
           type="password"
-          placeholder="Password"
+          className="input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button style={{ width: "50%" }} variant="secondary" onClick={login}>
-        Login
-      </Button>
-      <div>
-        IF U DONT HAVE ACC GO TO <Link to="/register">Register</Link>
-        <p>
-          DONT REMEMBER PASSWORD? <Link to="/passwordReset">RESET HERE</Link>
-        </p>
+        <Form.Group controlId="formBasicCheckbox">
+          <Form.Check
+            className="checkbox"
+            type="checkbox"
+            label="Zapamiętaj mnie"
+          />
+        </Form.Group>
+        <Button className="login-btn" onClick={login}>
+          Zaloguj
+        </Button>
+        <div>
+          <Link to="/register">Pierwszy raz tutaj? Zarejestruj</Link>
+          <Link to="/passwordReset">Zapomniałeś hasła? </Link>
+       
+        </div>
       </div>
-    </Form>
+    </form>
   );
 };
 

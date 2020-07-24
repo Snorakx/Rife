@@ -4,6 +4,8 @@ import firebase from "../constans/config";
 import { Link, useHistory } from "react-router-dom";
 import { AiFillGoogleCircle, AiFillFacebook } from "react-icons/ai";
 import { IconContext } from "react-icons";
+import Facebook from "../assets/fb.svg";
+import Google from "../assets/google.svg"
 
 const StartLoginScreen: FC = (props) => {
   const history = useHistory();
@@ -90,41 +92,24 @@ const StartLoginScreen: FC = (props) => {
   };
 
   return (
-    <div
-      style={{
-        marginLeft: "30%",
-        marginTop: "50%",
-      }}
-    >
+    <div>
       <Link to="/login">
-        <Button
-          style={{
-            width: "50%",
-          }}
-          variant="secondary"
-        >
-          Login
-        </Button>
+        <div className="login-btn">
+          Zaloguj</div>
       </Link>
       <br />
       <Link to="/register">
-        <Button
-          style={{
-            width: "50%",
-            marginTop: "5%",
-          }}
-          variant="secondary"
+        <div
+          className="register-btn"
         >
-          Register
-        </Button>
+          Zarejestruj
+        </div>
       </Link>
-      <div style={{ width: "50%", textAlign: "center" }}>OR</div>
-      <div className="social-icons-container">
-        <IconContext.Provider value={{ className: "social-icons" }}>
-          <AiFillGoogleCircle onClick={googleLogin} />
-          <AiFillFacebook onClick={facebookLogin} />
-        </IconContext.Provider>
-      </div>
+        <div className="left-rectangle" />
+        <div className="or">OR</div>
+          <div className="right-rectangle" />
+      <img className="fb-style" src={Facebook} onClick={facebookLogin} />
+      <img className="google-style" src={Google} onClick={googleLogin}/>
     </div>
   );
 };

@@ -46,7 +46,7 @@ class NewProjectInput extends Component<
         <FormGroup role="form">
           <InputGroup className="mb-3">
             <FormControl
-              placeholder="Project add"
+              placeholder="Dodaj nowy projekt"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {

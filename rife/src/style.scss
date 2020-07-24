@@ -50,13 +50,110 @@
   font-size: 250%;
 }
 .logo {
-  font-size: 200%;
+  font-size: 22.667vw;
+  color: #312A45;
+  font-weight: bold;
+  font-family: 'Segoe UI';
+  margin-left: 2.667vw;
+  text-align: center;
+  margin-top: 12.800vw;
 }
-.social-icons {
-  font-size: xx-large;
-  margin-left: 15%;
+.login-btn {
+  background-color: #354A8D;
+  border-radius: 5.333vw;
+  width:42.400vw;
+  height: 14.933vw;
+  margin-left: 29.333vw;
+  margin-top: 33.867vw;
+  text-align: center;
+  color: #FAF9F9;
+  box-shadow: 0px 3px 6px #18787350;
+  font-size: 5.333vw;
+  padding: 2.667vw;
 }
-.social-icons-container {
-  margin-left: -13%;
-  margin-top: 25%;
+
+.register-btn {
+  background-color: #354A8D;
+  border-radius: 5.333vw;
+  width:42.400vw;
+  height: 14.933vw;
+  margin-left: 29.333vw;
+  color: #FAF9F9;
+  text-align: center;
+  box-shadow: 0px 3px 6px #18787350;
+  font-size: 5.333vw;
+  padding: 2.667vw;
+}
+
+.or{
+  font-size: 5.333vw;
+  text-align: center;
+  margin-top: 10.933vw;
+  margin-left:46.133vw;
+  position: absolute;
+}
+
+.left-rectangle{
+  width: 10.667vw;
+  height: 0.800vw;
+  background-color: #354A8D;
+  box-shadow: 0px 3px 6px #18787350;
+  margin-top: 14.933vw;
+  position: absolute;
+  margin-left:29.867vw;
+}
+
+.right-rectangle{
+  position: absolute;
+  width: 10.667vw;
+  height: 0.800vw;
+  background-color: #354A8D;
+  box-shadow: 0px 3px 6px #18787350;
+  margin-top: 14.933vw;
+  margin-left: 59.733vw;
+  
+}
+
+.google-style{
+  position: absolute;
+  width: 13.333vw;
+  height: 13.333vw;
+  margin-left: 29.867vw;
+  margin-top: 26.933vw;
+}
+
+.fb-style{
+  position: absolute;
+  width: 13.333vw;
+  height: 13.333vw;
+  margin-left: 57.600vw;
+  margin-top: 26.933vw;
+}
+ 
+.label{
+  font-size: 4vw;
+  margin-top: 12.294vw;
+  margin-left: 19.733vw;
+  color:#312A45;
+  display: block;
+}
+
+.input{
+  display: block;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #354A8D;
+  margin-top: 2.9985007496251876vh;
+  margin-left: 19.733vw;
+}
+
+.input-container{
+  display: block;
+  flex-direction: column;
+  background-color:  #Fff;
+}
+
+.checkbox{
+  display: block;
+  flex-direction: column;
 }
