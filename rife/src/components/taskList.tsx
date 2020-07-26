@@ -4,30 +4,25 @@ import React, { FC } from "react";
 import { ListGroup } from "react-bootstrap";
 import { ISingleProject } from "../entities/singleElement";
 import { useHistory } from "react-router-dom";
-interface IProjectProps {
-  projects?: any[];
+interface ITaskProps {
+  tasks?: any[];
 }
 
-const ProjectList: FC<IProjectProps> = ({ projects }) => {
+const TaskList: FC<ITaskProps> = ({ tasks }) => {
   const history = useHistory();
-
-  const goToTasks = () => {
-    history.push("/tasks");
-  };
 
   return (
     <ListGroup>
-      {projects &&
-        projects.map((project: ISingleProject) => {
+      {tasks &&
+        tasks.map((task: ISingleProject) => {
           return (
             <div
-              key={project.id}
+              key={task.id}
               style={{ marginBottom: "5px", backgroundColor: "pink" }}
-              onClick={goToTasks}
             >
-              {project.name}
+              {task.name}
               <br />
-              {project.id}
+              {task.id}
             </div>
           );
         })}
@@ -35,4 +30,4 @@ const ProjectList: FC<IProjectProps> = ({ projects }) => {
   );
 };
 
-export default ProjectList;
+export default TaskList;

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 // import { useDispatch, useSelector } from "react-redux";
-import { ISingleProject } from "../entities/singleElement";
+import { ISingleTask } from "../entities/singleElement";
 
 // import { AiOutlinePlus } from "react-icons/ai";
 // import { IconContext } from "react-icons";
 import { Button, FormControl, InputGroup, FormGroup } from "react-bootstrap";
 import { connect } from "react-redux";
-import { createProject } from "../reducers/actions/projectsActions";
+import { createProject, createTask } from "../reducers/actions/projectsActions";
 
-interface INewProjectInputProps {
+interface INewTaskInputProps {
   name: string;
   [x: string]: string;
 }
@@ -16,23 +16,18 @@ interface IProps {
   handleSubmit(event: React.FormEvent<HTMLInputElement>): void;
 }
 
-class NewProjectInput extends Component<
-  ISingleProject,
-  INewProjectInputProps,
-  IProps
-> {
+class NewTaskInput extends Component<ISingleTask, INewTaskInputProps, IProps> {
   state = {
     name: "",
   };
   handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    console.log("asd");
     this.setState({
       name: event.currentTarget.value,
     });
   };
   handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    this.props.createProject(this.state);
+    this.props.createTask(this.state);
   };
   render() {
     return (
@@ -65,9 +60,8 @@ class NewProjectInput extends Component<
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    createProject: (project: ISingleProject) =>
-      dispatch(createProject(project)),
+    createTask: (task: ISingleTask) => dispatch(createTask(task)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(NewProjectInput);
+export default connect(null, mapDispatchToProps)(NewTaskInput);

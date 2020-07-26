@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-export const firebaseConfig = {
+export const fbConfig = {
   apiKey: "AIzaSyDva8ULIv7OdynRdXRTKG5vusTheJayMCo",
   authDomain: "rife-1fb17.firebaseapp.com",
   databaseURL: "https://rife-1fb17.firebaseio.com",
@@ -13,7 +13,8 @@ export const firebaseConfig = {
   measurementId: "G-DPHTFY1PNX",
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(fbConfig);
 firebase.firestore().settings({ timestampsInSnapshots: true });
 
+export const firestore = firebase.firestore();
 export default firebase;

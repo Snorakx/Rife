@@ -1,22 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./style.scss";
-import HomeScreen from "./screens/Home/index";
 import User from "./screens/User/index";
 import RegisterScreen from "./screens/Register/index";
 import LoginScreen from "./screens/Start/index";
-
-// import Firebase, { app } from "firebase";
-
-// import "firebase/auth";
-// import firebase from "firebase";
+import HomeScreen from "./screens/Home/index";
 import Login from "./screens/Login";
 import ForgotPassword from "./screens/forgotPassword";
+import TimerScreen from "./screens/Timer";
+import TasksScreen from "./screens/Tasks";
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <div>
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
         <Switch>
           <Route exact path="/" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
@@ -25,10 +22,13 @@ const App = () => {
 
           <Route path="/home" component={HomeScreen} />
           <Route path="/user" component={User} />
+
+          <Route path="/timer" component={TimerScreen} />
+          <Route path="/tasks" component={TasksScreen} />
         </Switch>
-      </div>
-    </BrowserRouter>
-  );
-};
+      </BrowserRouter>
+    );
+  }
+}
 
 export default App;

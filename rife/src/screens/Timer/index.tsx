@@ -6,14 +6,14 @@ import { Redirect } from "react-router-dom";
 import NavBar from "../../components/navbar";
 import Header from "../../components/header";
 
-const UserScreen = () => {
+const TimerScreen = () => {
   let user = firebase.auth().currentUser;
 
   if (user) {
     return (
       <div>
         <Header />
-        <div>User Screen</div>
+        <div>Timer Screen</div>
         <NavBar />
       </div>
     );
@@ -24,4 +24,4 @@ const UserScreen = () => {
   }
 };
 
-export default UserScreen;
+export default TimerScreen;

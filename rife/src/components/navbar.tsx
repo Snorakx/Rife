@@ -7,10 +7,10 @@ const NavBar: FC = (props) => {
   return (
     <div className="nav-container">
       <IconContext.Provider value={{ className: "nav-icons" }}>
-        <Link to={"/user"}>
+        <Link to={"/home"}>
           <MdAspectRatio />
         </Link>
-        <Link to={"/user"}>
+        <Link to={"/timer"}>
           <MdAspectRatio />
         </Link>
         <Link to={"/user"}>

@@ -3,6 +3,7 @@ import NavBar from "../../components/navbar";
 // import logo from "./logo.svg";
 import NewProjectInput from "../../components/addNewProjectInput";
 import Header from "../../components/header";
+import NewTaskInput from "../../components/addNewTask";
 import firebase from "firebase";
 import {
   Redirect,
@@ -14,22 +15,23 @@ import ProjectList from "../../components/projectList";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import TaskList from "../../components/taskList";
 
 interface IProjectProps extends RouteComponentProps<any> {
-  projects?: string[];
+  tasks?: string[];
 }
 
-class HomeScreen extends Component<IProjectProps> {
+class TasksScreen extends Component<IProjectProps> {
   render() {
     let user = firebase.auth().currentUser;
 
     if (user) {
-      const { projects } = this.props;
+      const { tasks } = this.props;
       return (
         <div className="App">
           <Header />
-          <NewProjectInput />
-          <ProjectList projects={projects} />
+          <NewTaskInput />
+          <TaskList tasks={tasks} />
           <NavBar />
         </div>
       );
@@ -44,11 +46,11 @@ class HomeScreen extends Component<IProjectProps> {
 const mapStateToProps = (state: any) => {
   console.log(state);
   return {
-    projects: state.firestore.ordered.projects,
+    tasks: state.firestore.ordered.tasks,
   };
 };
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "projects" }])
-)(HomeScreen) as any;
+  firestoreConnect([{ collection: "tasks" }])
+)(TasksScreen) as any;
