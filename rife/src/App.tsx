@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./style.scss";
+import "./register.scss";
 import HomeScreen from "./screens/Home/index";
 import User from "./screens/User/index";
 import RegisterScreen from "./screens/Register/index";

@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { MdAspectRatio } from "react-icons/md";
+import { MdAlarmOn  } from "react-icons/md";
+import { FaCalendarAlt, FaTasks } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 const NavBar: FC = (props) => {
@@ -8,13 +9,13 @@ const NavBar: FC = (props) => {
     <div className="nav-container">
       <IconContext.Provider value={{ className: "nav-icons" }}>
         <Link to={"/user"}>
-          <MdAspectRatio />
+          <FaTasks />
         </Link>
         <Link to={"/user"}>
-          <MdAspectRatio />
+          <MdAlarmOn />
         </Link>
         <Link to={"/user"}>
-          <MdAspectRatio />
+          <FaCalendarAlt />
         </Link>
       </IconContext.Provider>
     </div>

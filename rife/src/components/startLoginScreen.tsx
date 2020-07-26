@@ -1,11 +1,8 @@
 import React, { FC } from "react";
-import { Button } from "react-bootstrap";
 import firebase from "../constans/config";
 import { Link, useHistory } from "react-router-dom";
-import { AiFillGoogleCircle, AiFillFacebook } from "react-icons/ai";
-import { IconContext } from "react-icons";
 import Facebook from "../assets/fb.svg";
-import Google from "../assets/google.svg"
+import Google from "../assets/google.svg";
 
 const StartLoginScreen: FC = (props) => {
   const history = useHistory();
@@ -94,22 +91,17 @@ const StartLoginScreen: FC = (props) => {
   return (
     <div>
       <Link to="/login">
-        <div className="login-btn">
-          Zaloguj</div>
+        <div className="login-btn">Zaloguj</div>
       </Link>
       <br />
       <Link to="/register">
-        <div
-          className="register-btn"
-        >
-          Zarejestruj
-        </div>
+        <div className="register-btn">Zarejestruj</div>
       </Link>
-        <div className="left-rectangle" />
-        <div className="or">OR</div>
-          <div className="right-rectangle" />
+      <div className="left-rectangle" />
+      <div className="or">OR</div>
+      <div className="right-rectangle" />
       <img className="fb-style" src={Facebook} onClick={facebookLogin} />
-      <img className="google-style" src={Google} onClick={googleLogin}/>
+      <img className="google-style" src={Google} onClick={googleLogin} />
     </div>
   );
 };

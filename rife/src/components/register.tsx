@@ -36,59 +36,44 @@ const AuthForm: FC = (props) => {
   };
 
   return (
-    <Form>
-      <Form.Group controlId="Name">
-        <Form.Label>Full Name</Form.Label>
-        <Form.Control
+    <form>
+      <div className="input-container">
+        <label className="name-label">Imię</label>
+        <input
+          className="another-input"
           type="name"
-          placeholder="Enter name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group controlId="Email">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
+        <label className="another-label">E-mail</label>
+        <input
+          className="another-input"
           type="email"
-          placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-      <Form.Group controlId="Password">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
+        <label className="another-label">Hasło</label>
+        <input
+          className="another-input"
           type="password"
-          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </Form.Group>
-      <Form.Group controlId="Password">
-        <Form.Label>Confirm Password</Form.Label>
-        <Form.Control
+        <label className="another-label">Powtórz hasło</label>
+        <input
+          className="another-input"
           type="password"
-          placeholder="Password"
           value={c_password}
           onChange={(e) => setC_Password(e.target.value)}
         />
-      </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button style={{ width: "50%" }} variant="secondary" onClick={register}>
-        Register
-      </Button>
-      <div>
-        IF U HAVE ACC GO TO <Link to="/">Login</Link>
+        <Button className="second-register-btn" onClick={register}>
+          Zarejestruj
+        </Button>
+        <Link className="login-link" to="/">
+          Masz już konto? <b>Zaloguj</b>
+        </Link>
       </div>
-    </Form>
+    </form>
   );
 };
 

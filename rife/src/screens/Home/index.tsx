@@ -18,21 +18,20 @@ class Dashboard extends Component<IProjectProps, IProjectState> {
   render() {
     let user = firebase.auth().currentUser;
 
-    if (user) {
+    // if (user) {
       const { projects } = this.props;
       return (
         <div className="App">
-          <Header />
           <NewProjectInput />
           <ProjectList projects={projects} />
           <NavBar />
         </div>
       );
       // User is signed in.
-    } else {
-      return <Redirect to="/" />;
-      // No user is signed in.
-    }
+    // } else {
+    //   return <Redirect to="/" />;
+    //   // No user is signed in.
+    // }
   }
 }
 

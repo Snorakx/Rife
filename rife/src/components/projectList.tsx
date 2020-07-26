@@ -1,6 +1,4 @@
 import React, { FC } from "react";
-// import { AiOutlinePlus } from "react-icons/ai";
-// import { IconContext } from "react-icons";
 import { ListGroup } from "react-bootstrap";
 import { ISingleProject } from "../entities/singleElement";
 interface IProjectProps {
@@ -13,10 +11,8 @@ const ProjectList: FC<IProjectProps> = ({ projects }) => {
       {projects &&
         projects.map((project: ISingleProject) => {
           return (
-            <ListGroup.Item key={project.id} variant="primary">
+            <ListGroup.Item key={project.id} className="project">
               {project.name}
-              <br />
-              {project.id}
             </ListGroup.Item>
           );
         })}

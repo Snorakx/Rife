@@ -27,7 +27,7 @@ const LoginPassword: FC = (props) => {
   return (
     <form>
       <div className="input-container">
-        <label className="label">E-mail</label>
+        <label className="email-label">E-mail</label>
         <input
           name="name"
           className="input"
@@ -35,7 +35,7 @@ const LoginPassword: FC = (props) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label className="label">Hasło</label>
+        <label className="password-label">Hasło</label>
         <input
           type="password"
           className="input"
@@ -49,13 +49,12 @@ const LoginPassword: FC = (props) => {
             label="Zapamiętaj mnie"
           />
         </Form.Group>
-        <Button className="login-btn" onClick={login}>
+        <Button className="second-login-btn" onClick={login}>
           Zaloguj
         </Button>
         <div>
-          <Link to="/register">Pierwszy raz tutaj? Zarejestruj</Link>
-          <Link to="/passwordReset">Zapomniałeś hasła? </Link>
-       
+          <Link className="forget-password" to="/passwordReset">Zapomniałeś hasła? </Link> 
+          <Link className="create-account" to="/register">Pierwszy raz tutaj? <b>Zarejestruj</b> </Link>       
         </div>
       </div>
     </form>

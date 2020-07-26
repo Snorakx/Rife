@@ -1,22 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./register.scss";
+@import "./forgotPassword.scss";
+@import "./navbar.scss";
+@import "./project.scss";
 
-.nav-container {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  justify-content: space-between;
-  border-top: 1px solid black;
-}
-.nav-icons {
-  width: 33%;
-  font-size: 300%;
-  color: black;
-}
-.App-header {
-  color: red;
-  background-color: green;
-  width: 100%;
-}
+$primary: #354A8D;
+$secondary: #F8D57E;
+$text: #312A45;
+$background: #354A8D;
+$task: #F7F9FC;
+$add: #DEE9F9;
+
+
 .input-container {
   position: absolute;
   width: 100%;
@@ -24,31 +19,10 @@
 .project-form {
   margin-top: 5%;
 }
-.project-input {
-  width: 80%;
-  padding: 5%;
-  border: none;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  margin-left: 2.5%;
-  background: #f0f0f0;
-}
 .project-input::placeholder {
-  font-size: 150%;
+  font-size: 6vw;
 }
-.project-submit {
-  padding: 5%;
-  width: 14%;
-  border: none;
-  color: white;
-  background: gray;
-  margin-left: -8%;
-  border-radius: 15px;
-  position: absolute;
-}
-.submit-icon {
-  font-size: 250%;
-}
+
 .logo {
   font-size: 22.667vw;
   color: #312A45;
@@ -130,9 +104,17 @@
   margin-top: 26.933vw;
 }
  
-.label{
+.email-label{
   font-size: 4vw;
   margin-top: 12.294vw;
+  margin-left: 19.733vw;
+  color:#312A45;
+  display: block;
+}
+
+.password-label{
+  font-size: 4vw;
+  margin-top: 7vw;
   margin-left: 19.733vw;
   color:#312A45;
   display: block;
@@ -143,8 +125,9 @@
   outline: 0;
   border-width: 0 0 2px;
   border-color: #354A8D;
-  margin-top: 2.9985007496251876vh;
+  margin-top: 2vh;
   margin-left: 19.733vw;
+  width: 60.800vw;
 }
 
 .input-container{
@@ -156,4 +139,48 @@
 .checkbox{
   display: block;
   flex-direction: column;
+  text-align: center;
+  margin-top: 6.297vh;
+  font-size: 4.267vw;
+  color:#312A45;
+  font-size: 4.267vw;
 }
+
+
+.second-login-btn {
+  background-color: #354A8D;
+  border-radius: 5.333vw;
+  width:42.400vw;
+  height: 14.933vw;
+  margin-left: 29.333vw;
+  margin-top: 5vw;
+  text-align: center;
+  color: #FAF9F9;
+  box-shadow: 0px 3px 6px #18787350;
+  font-size: 5.333vw;
+  padding: 2.667vw;
+}
+
+.forget-password{
+  text-align: center;
+  margin-top: 4vw;
+  font-size: 4.267vw;
+  color: #6C7181;
+  display: block;
+  flex-direction: column;
+}
+
+.create-account{
+  text-align: center;
+  margin-bottom: 0vw;
+  font-size: 5.333vw;
+  color:#354A8D;
+  display: block;
+  flex-direction: column;
+  padding: 15px;
+}
+
+
+
+
+
