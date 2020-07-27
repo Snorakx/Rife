@@ -8,7 +8,7 @@ const Header: FC = (props) => {
   return (
     <div className="header">
       <Link to={"/"} style={{ color: "black", textDecoration: "none" }}>
-        <div className="logo">RIFE</div>
+        <div className="logo">Rife</div>
       </Link>
     </div>
   );

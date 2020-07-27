@@ -7,6 +7,7 @@ import { ISingleProject } from "../entities/singleElement";
 import { Button, FormControl, InputGroup, FormGroup } from "react-bootstrap";
 import { connect } from "react-redux";
 import { createProject } from "../reducers/actions/projectsActions";
+import {AiOutlinePlus} from 'react-icons/ai';
 
 interface INewProjectInputProps {
   name: string;
@@ -41,23 +42,16 @@ class NewProjectInput extends Component<
           this.handleSubmit(event)
         }
       >
-        <FormGroup role="form">
-          <InputGroup className="mb-3">
-            <FormControl
-              placeholder="Project add"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                this.handleChange(e);
-              }}
-            />
-            <InputGroup.Append>
-              <Button type="submit" variant="outline-secondary">
-                Button
-              </Button>
-            </InputGroup.Append>
-          </InputGroup>
-        </FormGroup>
+        <input
+          className="project-input"
+          placeholder="Dodaj nowy projekt"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            this.handleChange(e);
+          }}
+        />
+        <Button className="add-project-btn" type="submit">
+          <AiOutlinePlus />
+        </Button>
       </form>
     );
   }

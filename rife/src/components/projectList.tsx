@@ -1,6 +1,4 @@
 import React, { FC } from "react";
-// import { AiOutlinePlus } from "react-icons/ai";
-// import { IconContext } from "react-icons";
 import { ListGroup } from "react-bootstrap";
 import { ISingleProject } from "../entities/singleElement";
 import { useHistory } from "react-router-dom";
@@ -20,6 +18,7 @@ const ProjectList: FC<IProjectProps> = ({ projects }) => {
       {projects &&
         projects.map((project: ISingleProject) => {
           return (
+<<<<<<< HEAD
             <div
               key={project.id}
               style={{ marginBottom: "5px", backgroundColor: "pink" }}
@@ -29,6 +28,11 @@ const ProjectList: FC<IProjectProps> = ({ projects }) => {
               <br />
               {project.id}
             </div>
+=======
+            <ListGroup.Item key={project.id} className="project">
+              {project.name}
+            </ListGroup.Item>
+>>>>>>> bc259f8ad95c0f4ca6b6ab239723653aa2ac3dd8
           );
         })}
     </ListGroup>
