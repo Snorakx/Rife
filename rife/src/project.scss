@@ -1,57 +1,59 @@
-.project-input{
-    background-color: #DEE9F9;
-    color: #312A45;
-    height: 12vw;
-    margin-left: 5vw;
-    margin-top: 9vw;
-    width: 80vw;
-    outline: none;
-    border: none;
-    text-align: center;
+.project-input {
+  background-color: #dee9f9;
+  color: #312a45;
+  height: 12vw;
+  margin-left: 5vw;
+  margin-top: 9vw;
+  width: 80vw;
+  outline: none;
+  border: none;
+  text-align: center;
 }
 
-.add-project-btn{
-    height: 12vw;
-    width: 13vw;
-    border-radius: 0vw 5vw 5vw 0vw;
-    background-color: #354A8D;
-    color: #E3EBF1;
-    position: absolute;
-    margin-top: 9vw;
-    border: none;
+.add-project-btn {
+  height: 12vw;
+  width: 13vw;
+  border-radius: 0vw 5vw 5vw 0vw;
+  background-color: #354a8d;
+  color: #e3ebf1;
+  position: absolute;
+  margin-top: 9vw;
+  border: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #312A45;
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #312A45;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #312A45;
-  }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #312a45;
+  opacity: 1; /* Firefox */
+}
 
-  .project-input:focus {
-    border: none;
-    outline: none;
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #312a45;
+}
 
-  }
-  input{
-      background-color:black;
-  }
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #312a45;
+}
 
-  .project{
-    margin-top: 5vw;
-    margin-left: 5vw;
-    width: 90vw;
-    min-height: 41.867vw;
-    background-color: #F7F9FC;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0px 3px 6px #00000030;
-    color: #312A45;
-    font-size: 6.400vw;
-  }
+.project-input:focus {
+  border: none;
+  outline: none;
+}
+input {
+  background-color: black;
+}
+
+.project {
+  margin-top: 5vw;
+  margin-left: 5vw;
+  width: 90vw;
+  min-height: 41.867vw;
+  background-color: #f7f9fc;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0px 3px 6px #00000030;
+  color: #312a45;
+  font-size: 6.4vw;
+}

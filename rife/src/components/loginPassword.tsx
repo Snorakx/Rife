@@ -53,8 +53,12 @@ const LoginPassword: FC = (props) => {
           Zaloguj
         </Button>
         <div>
-          <Link className="forget-password" to="/passwordReset">Zapomniałeś hasła? </Link> 
-          <Link className="create-account" to="/register">Pierwszy raz tutaj? <b>Zarejestruj</b> </Link>       
+          <Link className="forget-password" to="/passwordReset">
+            Zapomniałeś hasła?{" "}
+          </Link>
+          <Link className="create-account" to="/register">
+            Pierwszy raz tutaj? <b>Zarejestruj</b>{" "}
+          </Link>
         </div>
       </div>
     </form>

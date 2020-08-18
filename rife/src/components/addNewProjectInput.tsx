@@ -7,7 +7,7 @@ import { ISingleProject } from "../entities/singleElement";
 import { Button, FormControl, InputGroup, FormGroup } from "react-bootstrap";
 import { connect } from "react-redux";
 import { createProject } from "../reducers/actions/projectsActions";
-import {AiOutlinePlus} from 'react-icons/ai';
+import { AiOutlinePlus } from "react-icons/ai";
 
 interface INewProjectInputProps {
   name: string;

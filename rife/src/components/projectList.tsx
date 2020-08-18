@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { ListGroup } from "react-bootstrap";
 import { ISingleProject } from "../entities/singleElement";
 import { useHistory } from "react-router-dom";
+import { isLoaded, isEmpty } from "react-redux-firebase";
 interface IProjectProps {
   projects?: any[];
 }
@@ -9,33 +10,33 @@ interface IProjectProps {
 const ProjectList: FC<IProjectProps> = ({ projects }) => {
   const history = useHistory();
 
-  const goToTasks = () => {
-    history.push("/tasks");
+  const goToTasks = (x: string) => {
+    history.push("/tasks", x);
   };
+  if (!isLoaded(projects)) {
+    return <div>Loading...</div>;
+  }
+
+  // Show message if there are no todos
+  if (isEmpty(projects)) {
+    return <div>Todos List Is Empty</div>;
+  }
 
   return (
-    <ListGroup>
-      {projects &&
-        projects.map((project: ISingleProject) => {
-          return (
-<<<<<<< HEAD
-            <div
-              key={project.id}
-              style={{ marginBottom: "5px", backgroundColor: "pink" }}
-              onClick={goToTasks}
+    <div className="projects-wrapper">
+      <ListGroup>
+        {projects &&
+          projects.map((project: ISingleProject, index: number) => (
+            <ListGroup.Item
+              onClick={() => goToTasks(project.id)}
+              key={index}
+              className="project"
             >
               {project.name}
-              <br />
-              {project.id}
-            </div>
-=======
-            <ListGroup.Item key={project.id} className="project">
-              {project.name}
             </ListGroup.Item>
->>>>>>> bc259f8ad95c0f4ca6b6ab239723653aa2ac3dd8
-          );
-        })}
-    </ListGroup>
+          ))}
+      </ListGroup>
+    </div>
   );
 };
 

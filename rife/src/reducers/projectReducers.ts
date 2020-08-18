@@ -1,9 +1,5 @@
 const initState = {
-  projects: [
-    { id: "1", name: "help me find peach" },
-    { id: "2", name: "collect all the stars" },
-    { id: "3", name: "egg hunt with yoshi" },
-  ],
+  projects: [],
 };
 
 const projectReducer = (state = initState, action: any) => {

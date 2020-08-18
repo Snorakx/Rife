@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import "./style.scss";
 import User from "./screens/User/index";
 import RegisterScreen from "./screens/Register/index";
@@ -9,11 +9,13 @@ import Login from "./screens/Login";
 import ForgotPassword from "./screens/forgotPassword";
 import TimerScreen from "./screens/Timer";
 import TasksScreen from "./screens/Tasks";
+import { createBrowserHistory } from "history";
 
 class App extends Component {
+  history = createBrowserHistory();
   render() {
     return (
-      <BrowserRouter>
+      <Router history={this.history}>
         <Switch>
           <Route exact path="/" component={LoginScreen} />
           <Route path="/register" component={RegisterScreen} />
@@ -26,7 +28,7 @@ class App extends Component {
           <Route path="/timer" component={TimerScreen} />
           <Route path="/tasks" component={TasksScreen} />
         </Switch>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

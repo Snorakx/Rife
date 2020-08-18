@@ -1,11 +1,14 @@
 import React, { FC } from "react";
 import firebase from "../constans/config";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, Redirect } from "react-router-dom";
 import Facebook from "../assets/fb.svg";
 import Google from "../assets/google.svg";
+import { getFirebase } from "react-redux-firebase";
 
 const StartLoginScreen: FC = (props) => {
   const history = useHistory();
+
+  const dbConnect = getFirebase().firestore();
 
   const facebookLogin = () => {
     let provider = new firebase.auth.FacebookAuthProvider();
@@ -54,18 +57,18 @@ const StartLoginScreen: FC = (props) => {
 
         // var token = credential.accessToken;
         // The signed-in user info.
-        var user = result.user;
-        let newUser = result.additionalUserInfo?.isNewUser;
 
-        if (user) {
+        if (!result.additionalUserInfo?.isNewUser) {
           history.push("/home");
-        } else if (newUser) {
+          console.log("aaa");
+        } else if (result.additionalUserInfo?.isNewUser) {
           history.push("/home");
 
-          // db.ref("/user").push({
-          //   name: result.user?.displayName,
-          //   email: result.user?.email,
-          // });
+          dbConnect.collection("users").doc(result.user?.uid).set({
+            email: result.user?.email,
+            name: result.user?.displayName,
+          });
+          console.log(result.user?.displayName);
         } else {
           console.log("isLogged:no");
         }

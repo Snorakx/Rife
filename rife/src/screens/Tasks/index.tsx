@@ -22,6 +22,9 @@ interface IProjectProps extends RouteComponentProps<any> {
 }
 
 class TasksScreen extends Component<IProjectProps> {
+  componentDidMount() {
+    console.log(this.props.location.state);
+  }
   render() {
     let user = firebase.auth().currentUser;
 
@@ -43,14 +46,25 @@ class TasksScreen extends Component<IProjectProps> {
   }
 }
 
-const mapStateToProps = (state: any) => {
-  console.log(state);
-  return {
-    tasks: state.firestore.ordered.tasks,
-  };
-};
+const mapStateToProps = (state: any, props: any) => ({
+  tasks: state.firestore.ordered.mytasks,
+  authUID: state.firebase.auth.uid,
+});
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "tasks" }])
+  firestoreConnect((props: any) => {
+    console.log(props);
+    return [
+      {
+        collection: "users",
+        doc: props.authUID,
+        subcollections: [
+          { collection: "projects", doc: props.location.state },
+          { collection: "tasks" },
+        ],
+        storeAs: "mytasks",
+      },
+    ];
+  })
 )(TasksScreen) as any;
